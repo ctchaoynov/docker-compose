@@ -7,16 +7,16 @@ networks:
         - subnet: 172.28.0.0/16
           gateway: 172.28.0.1
 services:
-  my-app-api:
+  my-store-api:
     build:
-      context: ./my-app-api
+      context: ../my-store-api
     ports: 
       - 3030:3030
     networks:
       - my_app_network
-  my-app-front:
+  my-store-front:
     build:
-      context: ./my-app-front
+      context: ../my-store-front
     ports:
       - 3000:3000
     networks:
@@ -25,4 +25,4 @@ services:
       - NEXT_PUBLIC_API_ENDPOINT="http://127.0.0.1:3030/api"
       - NEXT_PUBLIC_BACKEND_URL="http://127.0.0.1:3030"
     depends_on:
-      - my-app-api
+      - my-store-api
