@@ -22,7 +22,8 @@ services:
     networks:
       - my_app_network
     environment:
-      - NEXT_PUBLIC_API_ENDPOINT="http://127.0.0.1:3030/api"
-      - NEXT_PUBLIC_BACKEND_URL="http://127.0.0.1:3030"
+      - NEXT_PUBLIC_API_ENDPOINT="http://my-store-api:3030/api"
+      - NEXT_PUBLIC_BACKEND_URL="http://my-store-api:3030"
     depends_on:
       - my-store-api
+    command: ["./wait-for-it.sh", "my-store-api", "3030", "--", "npm", "start"]
