@@ -8,6 +8,8 @@ networks:
           gateway: 172.28.0.1
 services:
   my-store-api:
+    env_file:
+      - ../my-store-api/.env
     build:
       context: ../my-store-api
     ports: 
@@ -15,14 +17,13 @@ services:
     networks:
       - my_app_network
   my-store-front:
+    env_file:
+      - ../my-store-front/.env
     build:
       context: ../my-store-front
     ports:
       - 3000:3000
     networks:
       - my_app_network
-    environment:
-      - NEXT_PUBLIC_API_ENDPOINT="http://127.0.0.1:3030/api"
-      - NEXT_PUBLIC_BACKEND_URL="http://127.0.0.1:3030"
     depends_on:
       - my-store-api
