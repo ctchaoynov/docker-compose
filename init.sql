@@ -13,4 +13,4 @@ CREATE TABLE admin_users (
 
 INSERT INTO admin_users (username, password_hash, email, full_name)
 VALUES
-    ('Stéphane', '$2y$10$Dmyt6EaP9skXzbXFZQXugeuk4sahJVHrnQvahahAtldyqu9qV5kH.', 'legueux@gmail.com', 'Stéphane Gueux');
+    ('Stéphane', '$2a$12$bL0QlWE6eJSvygolH/GAruXs9iz8tGjjzlhUP4zHFVYO6ryo0iylu', 'legueux@gmail.com', 'Stéphane Gueux');
